@@ -19,11 +19,13 @@ const withTM = require('next-transpile-modules')([
     '@solana/wallet-adapter-sollet',
     '@solana/wallet-adapter-solong',
     '@solana/wallet-adapter-torus',
-    '@solana/wallet-adapter-walletconnect'
 ]);
 
 /** @type {import('next').NextConfig} */
 module.exports = withTM({
     reactStrictMode: true,
     webpack5: true,
+    typescript: {
+    	ignoreBuildErrors: true,
+  	},
 });
