@@ -22,7 +22,7 @@ const withTM = require('next-transpile-modules')([
     '@solana/wallet-adapter-sollet',
     '@solana/wallet-adapter-solong',
     '@solana/wallet-adapter-torus',
-    '@solana/wallet-adapter-walletconnect',
+    '@solana/wallet-adapter-walletconnect'
 ]);
 
 /** @type {import('next').NextConfig} */
