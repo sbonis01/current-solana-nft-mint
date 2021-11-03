@@ -43,13 +43,13 @@ const Home: NextPage = () => {
         variant="dark"
       >
         <Container>
-          <Navbar.Brand href="#">NFT COLLECTION (HOME)</Navbar.Brand>
+          <Navbar.Brand href="#">THE FLINTSTONERS</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/about">ABOUT</Nav.Link>
-              <Nav.Link href="/rarityCollection">RARITY/COLLECTION</Nav.Link>
-              <Nav.Link href="/roadmap">ROADMAP</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/rarityCollection">Rarity/Collection</Nav.Link>
+              <Nav.Link href="/roadmap">Roadmap</Nav.Link>
             </Nav>
             <Nav>
               <div id="connectButton" className={styles.walletButtons}>
