@@ -3,11 +3,28 @@
   position: sticky;
 }*/
 
-.navbar-fixed-top {
-  top: -70px; 
-}
+
 
 .navbar-fixed-top, .navbar-fixed-bottom {
   position: relative; 
   z-index: 999999;
+}
+
+.walletButtons {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.connectBtn{
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:0 0 20px 0 rgba(255,255,255,.5) inset;
+  min-width: 200px;
+  min-height: 70px;
+  padding: 15px;
+  margin-bottom: 30px;
+  margin-right: -45px;
+}
+.connectBtn:hover{
+  box-shadow:0 0 50px 2px rgba(255,255,255,.5) inset;
 }
