@@ -222,7 +222,7 @@
 }
 
 .wallet-adapter-modal-wrapper .wallet-adapter-button {
-    width: 100%;
+    width: 80%;
 }
 
 .wallet-adapter-modal-wrapper-no-logo {
@@ -255,4 +255,21 @@
 
 .wallet-adapter-modal-list li:not(:first-of-type) {
     margin-top: 12px;
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-collapse {
+    position: flex;
+    top: 0;
+    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+    border: 3px solid white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .wallet-adapter-button {
+    width: 97%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }

@@ -1,0 +1,13 @@
+
+/*.navbar-collapse {
+  position: sticky;
+}*/
+
+.navbar-fixed-top {
+  top: -70px; 
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: relative; 
+  z-index: 999999;
+}

@@ -45,7 +45,7 @@ const Home: NextPage = () => {
         <Container>
           <Navbar.Brand href="#">THE FLINTSTONERS</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Collapse className="navbar-fixed-top navbar-fixed-bottom" id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/about">About</Nav.Link>
               <Nav.Link href="/rarityCollection">Rarity/Collection</Nav.Link>
