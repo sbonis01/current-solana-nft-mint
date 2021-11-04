@@ -2,7 +2,29 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from "../styles/Home.module.css";
-import * as $ from "jquery";
+import { useWallet } from "@solana/wallet-adapter-react";
+import React, {
+  FC,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import {
+  ConnectionProvider,
+  WalletProvider,
+} from "@solana/wallet-adapter-react";
+import {
+  getLedgerWallet,
+  getPhantomWallet,
+  getSlopeWallet,
+  getSolflareWallet,
+  getSolletExtensionWallet,
+  getSolletWallet,
+  getTorusWallet,
+} from "@solana/wallet-adapter-wallets";
+import { clusterApiUrl } from "@solana/web3.js";
 
 // IMPORTS THE BOOTSTRAP COMPONENTS
 import Container from "react-bootstrap/Container";
@@ -20,12 +42,33 @@ import {
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 
-//LINK JS FILE THAT WILL HANDLE BUTTONS
-{
-  /* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>; */
+function isWalletConnected() {
+  //THIS GETS THE THREE DROPDOWN BUTTON OPTIONS AND THE HANDLE FUNCTIONS ASSOCIATED WITH THEM
+  const { publicKey, wallet, disconnect } = useWallet();
+  //THIS TAKES THE BIG PUBLIC KEY FOR THE WALLET AND TURNS IT INTO A SIMPLE ADDRESS TO SEND TO
+  const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
+  if (useWallet() !== null && base58 !== null) {
+    return true;
+  } else return false;
 }
 
 const Home: NextPage = () => {
+  //TODO: NEED A FUNCTION TO CHECK IF THE WALLET IS CONNECTED
+  var isConnected = isWalletConnected();
+
+  //TODO: IF(CONNECTED) NEED A FUNCTION TO TO GET AND HASH THE KEY TO A DATA STRUCTURE
+  if (isConnected) {
+    //TODO:
+    //1.HAVE A DATA-STRUCTURE SET UP THAT WILL BE ABLE TO STORE THE:
+    //(a)USERS-PUBLIC KEYS AND STORE WHERE ITS LOCATED USING AN
+    //(b)INDEX/HASH
+    //2. CREATE A HASH-NUMBER WITH A UNIQUE ID, CHECKING TO MAKE SURE THE SLOT IS EMPTY BEFORE INSERTING
+    //3. WILL NEED GETTER AND SETTER METHODS TO HERE TO MOVE THE COLLECTED PUBLIC KEY AND INDEX NUMBER TO THE DATA STRUCTURE
+  }
+
+  const { publicKey, wallet, disconnect } = useWallet();
+  const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
+
   return (
     <div className={styles.container}>
       <Head>
